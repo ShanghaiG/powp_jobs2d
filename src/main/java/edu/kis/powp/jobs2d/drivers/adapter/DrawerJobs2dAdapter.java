@@ -25,6 +25,7 @@ public class DrawerJobs2dAdapter extends DrawPanelController implements Job2dDri
 
 	@Override
 	public void operateTo(int x, int y) {
+
 		DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
 		DefaultDrawerFrame.getDefaultDrawerFrame().setVisible(false);
 
@@ -32,8 +33,11 @@ public class DrawerJobs2dAdapter extends DrawPanelController implements Job2dDri
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
-		drawPanelController.drawLine(line);
+		/**
+		 * Set position after all coordinates were set up
+		 * */
 		setPosition(x, y);
+		drawPanelController.drawLine(line);
 	}
 
 	@Override
